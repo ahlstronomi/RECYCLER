@@ -1,2 +1,0 @@
-# RECYCLER
-School iOs project
