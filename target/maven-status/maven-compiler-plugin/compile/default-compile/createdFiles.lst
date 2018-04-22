@@ -1,0 +1,13 @@
+com/categoryapp/domains/Database$1.class
+com/categoryapp/domains/Database$Singleton.class
+com/categoryapp/exceptions/NotFoundException.class
+com/categoryapp/domains/Database.class
+com/categoryapp/exceptions/ErrorMessage.class
+com/categoryapp/resources/CategoryResource$1.class
+com/categoryapp/resources/ImagesResource.class
+com/categoryapp/resources/utils/BaseFileManager.class
+com/categoryapp/resources/utils/FileManager.class
+com/categoryapp/resources/ApplicationConfig.class
+com/categoryapp/resources/CategoryResource.class
+com/categoryapp/domains/Category.class
+com/categoryapp/resources/utils/ImageFileManager.class
