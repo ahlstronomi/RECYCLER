@@ -24,13 +24,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
             if let fetchedCategories = categories {
-                print (fetchedCategories)
                 self.categories = fetchedCategories
                 self.tableView.reloadData()
             }
         }
-        
-        print(categories)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -59,7 +56,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         let category = categories[indexPath.row]
-        cell.categoryName.text = category.name
+        cell.categoryName.text = category.name.uppercased()
         
         if let imageUrl = category.imageUrl {
             cell.categoryImage.download(imageUrl)
