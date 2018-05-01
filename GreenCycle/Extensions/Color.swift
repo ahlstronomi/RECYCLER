@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIColor {
+    
     convenience init(hexString: String, alpha: CGFloat) {
         let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let scanner = Scanner(string: hexString)

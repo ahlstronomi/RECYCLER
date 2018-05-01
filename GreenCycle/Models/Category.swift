@@ -11,25 +11,34 @@ import Foundation
 struct Category: Codable, Equatable {
     var id: Int
     var name: String
-    var imageUrl: String?
-}
-
-enum CategoryType: String {
-    case biowaste
-    case metal
-    case plastic
-    case unknown
+    var color1: String = "#414345"
+    var color2: String = "#232526"
+    var image: String
+//    var okInfo: String
+//    var notOkInfo: String
     
-    init(rawValue: String) {
-        switch rawValue.lowercased().trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) {
-        case CategoryType.biowaste.rawValue:
-            self = .biowaste
-        case CategoryType.biowaste.rawValue:
-            self = .metal
-        case CategoryType.plastic.rawValue:
-            self = .plastic
-        default:
-            self = .unknown
-        }
+    init(id: Int,
+        name: String,
+        color1: String,
+        color2: String,
+        image: String
+        ) {
+        
+        self.id = id
+        self.name = name
+        self.color1 = color1
+        self.color2 = color2
+        self.image = image
+//        self.okInfo = okInfo
+//        self.notOkInfo = notOkInfo
+    }
+    
+    init(id: Int,
+         name: String,
+         image: String) {
+        
+        self.id = id
+        self.name = name
+        self.image = image
     }
 }
