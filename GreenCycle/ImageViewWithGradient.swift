@@ -28,8 +28,8 @@ class ImageViewWithGradient: UIImageView {
         myGradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
         myGradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
         let colors: [CGColor] = [
-            UIColor(hexString: color1, alpha: 0.8).cgColor,
-            UIColor(hexString: color2, alpha: 0.9).cgColor
+            UIColor(color1, 0.8).cgColor,
+            UIColor(color2, 0.9).cgColor
         ]
         myGradientLayer.colors = colors
         myGradientLayer.isOpaque = false

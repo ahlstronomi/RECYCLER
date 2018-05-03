@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     
-    convenience init(hexString: String, alpha: CGFloat) {
+    convenience init(_ hexString: String, _ alpha: CGFloat) {
         let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let scanner = Scanner(string: hexString)
         if (hexString.hasPrefix("#")) {

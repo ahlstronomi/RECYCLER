@@ -8,37 +8,24 @@
 
 import Foundation
 
-struct Category: Codable, Equatable {
+struct Category: Codable {
     var id: Int
     var name: String
-    var color1: String = "#414345"
-    var color2: String = "#232526"
+    var color1: String
+    var color2: String
     var image: String
-//    var okInfo: String
-//    var notOkInfo: String
+    var okInfo: String?
+    var notOkInfo: String?
     
-    init(id: Int,
-        name: String,
-        color1: String,
-        color2: String,
-        image: String
-        ) {
+    static func getAllCategories() -> [Category]? {
+        guard let fileUrl = Bundle.main.url(forResource: "data", withExtension: "json"), let data = try? Data(contentsOf: fileUrl) else {
+            return nil
+        }
         
-        self.id = id
-        self.name = name
-        self.color1 = color1
-        self.color2 = color2
-        self.image = image
-//        self.okInfo = okInfo
-//        self.notOkInfo = notOkInfo
-    }
-    
-    init(id: Int,
-         name: String,
-         image: String) {
+        var categories: [Category]?
         
-        self.id = id
-        self.name = name
-        self.image = image
+        categories = try? JSONDecoder().decode([Category].self, from: data)
+        
+        return categories
     }
 }

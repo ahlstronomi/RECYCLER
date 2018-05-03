@@ -45,30 +45,40 @@ class CategoryInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Make the navigationBar transparent
+//         Make the navigationBar transparent
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         
+        infoView.layer.roundCorners(radius: 9)
         
+        infoView.layer.masksToBounds =  true
         infoView.layer.shadowColor = shadowColor?.cgColor
-        infoView.layer.cornerRadius = 9
-        infoView.layer.shadowOffset = CGSize(width: 0.5, height: 0.4)  //Here you control x and y
+        infoView.layer.shadowOffset = CGSize.zero  //Here you control x and y
         infoView.layer.shadowOpacity = 0.5
         infoView.layer.shadowRadius = 5.0 //Here your control your blur
-        infoView.layer.masksToBounds =  false
         
         // Shows first view
         firstView.isHidden = false
         secondView.isHidden = true
         
         
-        // Update UI
+        // Update UIß®
         updateUI(with: category)
     }
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        infoView.layer.roundCorners(radius: 9)
+        infoView.layer.addShadow()
+        infoView.layer.masksToBounds =  true
     }
     
     // MARK: Private methods
@@ -76,5 +86,6 @@ class CategoryInfoViewController: UIViewController {
         guard let category = category else { return }
         categoryImage.image = UIImage(named: category.image)
         categoryImage.updateGradientColor(category)
+        segmentedControl.tintColor = UIColor(category.color1, 1.0)
     }
 }

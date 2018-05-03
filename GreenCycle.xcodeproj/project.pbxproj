@@ -20,7 +20,13 @@
 		9D2C53EC2087F60700616760 /* ImageViewWithGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C53EB2087F60700616760 /* ImageViewWithGradient.swift */; };
 		9D2C53EE20889CFC00616760 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C53ED20889CFC00616760 /* Color.swift */; };
 		9D3B3FDD209259B100384ED8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3B3FDC209259B100384ED8 /* TabBarViewController.swift */; };
+		FA362A6F209A25C500606D8F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA362A6E209A25C500606D8F /* CameraViewController.swift */; };
+		FA362A78209A710B00606D8F /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA362A77209A710B00606D8F /* Layer.swift */; };
+		FA362A7A209AFF4200606D8F /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA362A79209AFF4200606D8F /* CGFloat.swift */; };
+		FA362A7C209AFF4E00606D8F /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA362A7B209AFF4E00606D8F /* UIScreen.swift */; };
+		FA362A7E209B097200606D8F /* mlModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FA362A7D209B097200606D8F /* mlModel.mlmodel */; };
 		FA516B2D20961FCF00D0BB5B /* CategoryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA516B2C20961FCF00D0BB5B /* CategoryInfoViewController.swift */; };
+		FAB4380B2099C19C00D69A53 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = FAB4380A2099C19C00D69A53 /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +66,13 @@
 		9D2C53EB2087F60700616760 /* ImageViewWithGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWithGradient.swift; sourceTree = "<group>"; };
 		9D2C53ED20889CFC00616760 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9D3B3FDC209259B100384ED8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		FA362A6E209A25C500606D8F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		FA362A77209A710B00606D8F /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
+		FA362A79209AFF4200606D8F /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		FA362A7B209AFF4E00606D8F /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		FA362A7D209B097200606D8F /* mlModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = mlModel.mlmodel; path = ../../../Downloads/mlModel.mlmodel; sourceTree = "<group>"; };
 		FA516B2C20961FCF00D0BB5B /* CategoryInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfoViewController.swift; sourceTree = "<group>"; };
+		FAB4380A2099C19C00D69A53 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +127,8 @@
 				9D2C53D8208785E400616760 /* Models */,
 				9D2C53A320877B8900616760 /* AppDelegate.swift */,
 				FA516B2C20961FCF00D0BB5B /* CategoryInfoViewController.swift */,
+				FA362A6E209A25C500606D8F /* CameraViewController.swift */,
+				FA362A7D209B097200606D8F /* mlModel.mlmodel */,
 				9D2C53A520877B8900616760 /* CategoriesViewController.swift */,
 				9D2C53A720877B8900616760 /* Main.storyboard */,
 				9D3B3FDC209259B100384ED8 /* TabBarViewController.swift */,
@@ -123,6 +137,7 @@
 				9D2C53AA20877B8900616760 /* GreenCycle.xcdatamodeld */,
 				9D2C53D620877F2800616760 /* CustomTableViewCell.swift */,
 				9D2C53EB2087F60700616760 /* ImageViewWithGradient.swift */,
+				FAB4380A2099C19C00D69A53 /* data.json */,
 			);
 			path = GreenCycle;
 			sourceTree = "<group>";
@@ -158,6 +173,9 @@
 			children = (
 				9D2C53E12087A54200616760 /* Image.swift */,
 				9D2C53ED20889CFC00616760 /* Color.swift */,
+				FA362A77209A710B00606D8F /* Layer.swift */,
+				FA362A79209AFF4200606D8F /* CGFloat.swift */,
+				FA362A7B209AFF4E00606D8F /* UIScreen.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -270,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D2C53AE20877B8B00616760 /* Assets.xcassets in Resources */,
+				FAB4380B2099C19C00D69A53 /* data.json in Resources */,
 				9D2C53A920877B8900616760 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,9 +315,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D3B3FDD209259B100384ED8 /* TabBarViewController.swift in Sources */,
+				FA362A7E209B097200606D8F /* mlModel.mlmodel in Sources */,
+				FA362A78209A710B00606D8F /* Layer.swift in Sources */,
+				FA362A7A209AFF4200606D8F /* CGFloat.swift in Sources */,
+				FA362A7C209AFF4E00606D8F /* UIScreen.swift in Sources */,
 				9D2C53A620877B8900616760 /* CategoriesViewController.swift in Sources */,
 				FA516B2D20961FCF00D0BB5B /* CategoryInfoViewController.swift in Sources */,
 				9D2C53E22087A54200616760 /* Image.swift in Sources */,
+				FA362A6F209A25C500606D8F /* CameraViewController.swift in Sources */,
 				9D2C53DA208785F400616760 /* Category.swift in Sources */,
 				9D2C53EC2087F60700616760 /* ImageViewWithGradient.swift in Sources */,
 				9D2C53A420877B8900616760 /* AppDelegate.swift in Sources */,
