@@ -1,0 +1,86 @@
+[
+ {  "id": 0,
+    "name": "Biowaste",
+    "color1": "#9A8478",
+    "color2": "#1E130C",
+    "image": "biowaste"
+ },
+ {  "id": 1,
+    "name": "Carton",
+    "color1": "#414345",
+    "color2": "#232526",
+    "image": "carton"
+ },
+ {  "id": 2,
+    "name": "Clothing and other textiles",
+    "color1": "#414345",
+    "color2": "#232526",
+    "image": "clothingAndOtherTextiles"
+ },
+ {  "id": 3,
+    "name": "Construction waste",
+    "color1": "#414345",
+    "color2": "#232526",
+    "image": "constructionWaste"
+ },
+ {  "id": 4,
+    "name": "Electric and electronic equipment",
+    "color1": "#414345",
+    "color2": "#232526",
+    "image": "electricAndElectronicEquipment"
+ },
+ {  "id": 5,
+    "name": "Energy waste",
+    "color1": "#FE8C00",
+    "color2": "#F83600",
+    "image": "energyWaste"
+ },
+ {  "id": 6,
+    "name": "Garden waste and brushwood",
+    "color1": "#414345",
+    "color2": "#232526",
+    "image": "gardenWasteAndBrushwood"
+ },
+ {  "id": 7,
+    "name": "Glass",
+    "color1": "#414345",
+    "color2": "#232526",
+    "image": "glass.jpg"
+ },
+ {  "id": 8,
+    "name": "Hazardous waste",
+    "color1": "#EA384D",
+    "color2": "#D31027",
+    "image": "hazardousWaste"
+ },
+ {  "id": 9,
+    "name": "Large objects",
+    "color1": "#414345",
+    "color2": "#232526",
+    "image": "largeObjects"
+ },
+ {  "id": 10,
+    "name": "Metals",
+    "color1": "#00C6FF",
+    "color2": "#0072FF",
+    "image": "metals"
+ },
+ {  "id": 11,
+    "name": "Mixed waste",
+    "color1": "#414345",
+    "color2": "#232526",
+    "image": "mixedWaste"
+ },
+ {  "id": 12,
+    "name": "Paper",
+    "color1": "#AAFFA9",
+    "color2": "#11FFBD",
+    "image": "paper"
+ },
+ {  "id": 13,
+    "name": "Plastic",
+    "color1": "#414345",
+    "color2": "#232526",
+    "image": "plastic"
+ }
+]
