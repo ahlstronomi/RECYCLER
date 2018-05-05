@@ -19,9 +19,6 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         super.viewDidLoad()
         
-//        navigationController?.hidesBarsOnSwipe = true
-
-        
         // Make the navigationBar transparent
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()

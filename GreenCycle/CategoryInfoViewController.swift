@@ -1,15 +1,15 @@
 //
-//  CategoryInfoViewController.swift
-//  GreenCycle
+//  ViewController.swift
+//  InfoView
 //
-//  Created by Hồng Ngọc Doãn on 29/04/2018.
-//  Copyright © 2018 Nhim. All rights reserved.
+//  Created by Kendy on 22.4.2018.
+//  Copyright © 2018 Metropolia. All rights reserved.
 //
 
 import UIKit
 
 class CategoryInfoViewController: UIViewController {
-
+    
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var categoryImage: ImageViewWithGradient!
     @IBOutlet weak var firstView: UIView!
@@ -45,7 +45,7 @@ class CategoryInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//         Make the navigationBar transparent
+        //         Make the navigationBar transparent
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
@@ -63,7 +63,7 @@ class CategoryInfoViewController: UIViewController {
         secondView.isHidden = true
         
         
-        // Update UIß®
+        // Update UI
         updateUI(with: category)
     }
     
@@ -82,6 +82,7 @@ class CategoryInfoViewController: UIViewController {
     }
     
     // MARK: Private methods
+    
     fileprivate func updateUI(with category: Category?) {
         guard let category = category else { return }
         categoryImage.image = UIImage(named: category.image)
