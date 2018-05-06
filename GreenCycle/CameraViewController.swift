@@ -11,13 +11,12 @@ import AVFoundation
 import Vision
 
 class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+
     var labelWasWhenCaptured: String = ""
     var correctCategory: String = ""
     var pixelBufferWas: AnyObject?
     var categories: [Category]?
     
-    var labels: [String] = [String]()
     var pickerView = UIPickerView()
     
     
@@ -79,9 +78,6 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     // MARK: PickerAlert things
     
     var pickerAlert: UIAlertController {
-        
-        labels = ["Banana", "Light bulb", "Computer", "Phone", "Paper", "Battery", "Glass Bottle", "Plastic"]
-        
         let pickerAlert = UIAlertController(title: "What was it?", message: "\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.alert)
         let pickerFrame = UIPickerView(frame: CGRect(x: 10, y: 20, width: 250, height: 140))
         
@@ -89,7 +85,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         pickerAlert.view.addSubview(pickerFrame)
         pickerFrame.delegate = self
         pickerFrame.dataSource = self
-        
+
         // Cancel Action
         pickerAlert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {
             (alert: UIAlertAction!) -> Void in
@@ -107,10 +103,12 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     }
     
     
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         guard let categories = categories else { return 0 }
         return categories.count
@@ -121,13 +119,12 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         return categories[row].name
     }
     
-    // Picker selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         guard let categories = categories else { return }
         self.correctCategory = categories[row].name
     }
     
-    
+
     // MARK: Overrides
     
     override func viewDidLoad() {
@@ -290,7 +287,5 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         } else {
             blurView.removeFromSuperview()
         }
-        
     }
-    
 }
