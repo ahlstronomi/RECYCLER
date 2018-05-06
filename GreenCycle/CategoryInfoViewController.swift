@@ -12,9 +12,13 @@ class CategoryInfoViewController: UIViewController {
     
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var categoryImage: ImageViewWithGradient!
+    @IBOutlet weak var categoryIcon: UIImageView!
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    var okCategoryDetailedInfoVC: CategoryDetailedInfoViewController?
+    var notOkCategoryDetailedInfoVC: CategoryDetailedInfoViewController?
     
     var shadowColor: UIColor? = UIColor.black
     var shadowOffsetWidth: Int = 0
@@ -81,6 +85,16 @@ class CategoryInfoViewController: UIViewController {
         infoView.layer.masksToBounds =  true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == "OkInfoViewController" {
+            okCategoryDetailedInfoVC = segue.destination as? CategoryDetailedInfoViewController
+        } else if segue.identifier == "NotOkInfoViewController" {
+            notOkCategoryDetailedInfoVC = segue.destination as? CategoryDetailedInfoViewController
+        }
+    }
+    
     // MARK: Private methods
     
     fileprivate func updateUI(with category: Category?) {
@@ -88,5 +102,7 @@ class CategoryInfoViewController: UIViewController {
         categoryImage.image = UIImage(named: category.image)
         categoryImage.updateGradientColor(category)
         segmentedControl.tintColor = UIColor(category.color1, 1.0)
+        okCategoryDetailedInfoVC?.infoLabel.text = category.okInfo
+        notOkCategoryDetailedInfoVC?.infoLabel.text = category.notOkInfo
     }
 }

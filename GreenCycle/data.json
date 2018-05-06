@@ -1,86 +1,155 @@
-[
- {  "id": 0,
-    "name": "Biowaste",
-    "color1": "#9A8478",
-    "color2": "#1E130C",
-    "image": "biowaste"
- },
- {  "id": 1,
-    "name": "Carton",
-    "color1": "#414345",
-    "color2": "#232526",
-    "image": "carton"
- },
- {  "id": 2,
-    "name": "Clothing and other textiles",
-    "color1": "#414345",
-    "color2": "#232526",
-    "image": "clothingAndOtherTextiles"
- },
- {  "id": 3,
-    "name": "Construction waste",
-    "color1": "#414345",
-    "color2": "#232526",
-    "image": "constructionWaste"
- },
- {  "id": 4,
-    "name": "Electric and electronic equipment",
-    "color1": "#414345",
-    "color2": "#232526",
-    "image": "electricAndElectronicEquipment"
- },
- {  "id": 5,
-    "name": "Energy waste",
-    "color1": "#FE8C00",
-    "color2": "#F83600",
-    "image": "energyWaste"
- },
- {  "id": 6,
-    "name": "Garden waste and brushwood",
-    "color1": "#414345",
-    "color2": "#232526",
-    "image": "gardenWasteAndBrushwood"
- },
- {  "id": 7,
-    "name": "Glass",
-    "color1": "#414345",
-    "color2": "#232526",
-    "image": "glass.jpg"
- },
- {  "id": 8,
-    "name": "Hazardous waste",
-    "color1": "#EA384D",
-    "color2": "#D31027",
-    "image": "hazardousWaste"
- },
- {  "id": 9,
-    "name": "Large objects",
-    "color1": "#414345",
-    "color2": "#232526",
-    "image": "largeObjects"
- },
- {  "id": 10,
-    "name": "Metals",
-    "color1": "#00C6FF",
-    "color2": "#0072FF",
-    "image": "metals"
- },
- {  "id": 11,
-    "name": "Mixed waste",
-    "color1": "#414345",
-    "color2": "#232526",
-    "image": "mixedWaste"
- },
- {  "id": 12,
-    "name": "Paper",
-    "color1": "#AAFFA9",
-    "color2": "#11FFBD",
-    "image": "paper"
- },
- {  "id": 13,
-    "name": "Plastic",
-    "color1": "#414345",
-    "color2": "#232526",
-    "image": "plastic"
- }
+ [
+  {
+  "id": 0,
+  "name": "Biowaste",
+  "color1": "#9A8478",
+  "color2": "#1E130C",
+  "image": "biowaste",
+  "icon": "biowasteIcon",
+  "okInfo": "Biowaste consist of organic, decomposable, solid matter.\n\n- fruit and vegetable peels \n- food waste \n- solidified grease \n- tea bags or leaves and coffee grounds\n- soft paper, such as kitchen towels and tissues \n- plant parts and dried flowers \n",
+  "notOkInfo": "- cooking oils and other liquid greases \n- liquids \n- biodegradable diapers, sanitary towels \n- milk and juoce cartons \n- drugs > pharmacy \n- cat or dog waste \n- chewing gum"
+  },
+  
+  {
+  "id": 1,
+  "name": "Carton",
+  "color1": "#414345",
+  "color2": "#232526",
+  "image": "carton",
+  "icon": "cartonIcon",
+  "okInfo": "- carton packages for liquids, such as milk and juice \n- cartons (also with aluminium lining) \n- carton packages, such as cereal and cookie packs \n- paper packets, such as bread and flour bags \n- paper bags \n- wrapping papers \n- egg cartons \n- shells of toilet paper and kitchen towel rolls \n- corrugated cardboard and kraft paper \n",
+  "notOkInfo": "- dirty, unrinsed packages \n- gift wrapping paper \n- styrofoam \n- bubble wrap and other plastic cushioning materials \n- plastic bags or boxes \n"
+  },
+  
+  {
+  "id": 2,
+  "name": "Clothing and other textiles",
+  "color1": "#414345",
+  "color2": "#232526",
+  "image": "clothingAndOtherTextiles",
+  "icon": "clothingAndOtherTextilesIcon",
+  "okInfo": "ok",
+  "notOkInfo": "not ok"
+  },
+  
+  {
+  "id": 3,
+  "name": "Construction waste",
+  "color1": "#414345",
+  "color2": "#232526",
+  "image": "constructionWaste",
+  "icon": "constructionWasteIcon",
+  "okInfo": "ok",
+  "notOkInfo": "not ok"
+  },
+  
+  {
+  "id": 4,
+  "name": "Electric and electronic equipment",
+  "color1": "#414345",
+  "color2": "#232526",
+  "image": "electricAndElectronicEquipment",
+  "icon": "electricAndElectronicEquipmentIcon",
+  "okInfo": "ok",
+  "notOkInfo": "not ok"
+  },
+  
+  {
+  "id": 5,
+  "name": "Energy waste",
+  "color1": "#FE8C00",
+  "color2": "#F83600",
+  "image": "energyWaste",
+  "icon": "energyWasteIcon",
+  "okInfo": "ok",
+  "notOkInfo": "not ok"
+  },
+  
+  {
+  "id": 6,
+  "name": "Garden waste and brushwood",
+  "color1": "#414345",
+  "color2": "#232526",
+  "image": "gardenWasteAndBrushwood",
+  "icon": "gardenWasteAndBrushwoodIcon",
+  "okInfo": "ok",
+  "notOkInfo": "not ok"
+  },
+  
+  {
+  "id": 7,
+  "name": "Glass",
+  "color1": "#414345",
+  "color2": "#232526",
+  "image": "glass",
+  "icon": "glassIcon",
+  "okInfo": "ok",
+  "notOkInfo": "not ok"
+  },
+  
+  {
+  "id": 8,
+  "name": "Hazardous waste",
+  "color1": "#EA384D",
+  "color2": "#D31027",
+  "image": "hazardousWaste",
+  "icon": "hazardousWasteIcon",
+  "okInfo": "- energy-saving light bulbs and other fluorescent lights \n- batteries \n- drugs, needles and syringes \n- accumalators \n- waste oil, oil filters and other oily waste \n- wet paint, blue and varnish \n- pressurised packages \n- asbestos \n- pressure impregnated wood \n- strong acids, such as sulphuric acid \n- fire extinguishers and gas bottles \n- New Year's tin \n- thermometers with quick silver \n",
+  "notOkInfo": "- empty or completely dried glue tube \n- empty paint can or can with fully dried paint \n- completely empty pressurised can, which no longer sloshes or hisses \n- halogen and incandescent lamps \n- cigarette stumps \n- LED lights \n- no cooking fats \n- no fire alarms \n"
+  },
+  
+  {
+  "id": 9,
+  "name": "Large objects",
+  "color1": "#414345",
+  "color2": "#232526",
+  "image": "largeObjects",
+  "icon": "largeObjectsIcon",
+  "okInfo": "Large objects are, for example, divan bed, large carpets, sofas, stoves and freezers. Do not leave large objects in the waste containerstorage area of you housing estate without permission from your property manager.",
+  "notOkInfo": "- can it be restored or repaired \n- call for Sortti pick-up service and we will pick up the object from your home, for a fee. \n- bring it to a Sortti Station."
+  },
+  
+  {
+  "id": 10,
+  "name": "Metals",
+  "color1": "#00C6FF",
+  "color2": "#0072FF",
+  "image": "metals",
+  "icon": "metalsIcon",
+  "okInfo": "ok",
+  "notOkInfo": "not ok"
+  },
+  
+  {
+  "id": 11,
+  "name": "Mixed waste",
+  "color1": "#414345",
+  "color2": "#232526",
+  "image": "mixedWaste",
+  "icon": "mixedWasteIcon",
+  "okInfo": "ok",
+  "notOkInfo": "not ok"
+  },
+  
+  {
+  "id": 12,
+  "name": "Paper",
+  "color1": "#AAFFA9",
+  "color2": "#11FFBD",
+  "image": "paper",
+  "icon": "paperIcon",
+  "okInfo": "",
+  "notOkInfo": ""
+  },
+  
+  {
+  "id": 13,
+  "name": "Plastic",
+  "color1": "#414345",
+  "color2": "#232526",
+  "image": "plastic",
+  "icon": "plasticIcon",
+  "okInfo": "Plastic is recycled as a material only when it is pure and produces a large amount of the same quality. \nPlastic in households is often dirty and of a different quality and is not suitable for recycling. \nTherefore plastic are often used as energy waste. \n\n- plastic bottles \n- clean plastic containers and -boxes \n- plastic cans and buckets \n- plastic bags \n- packagin film \n- styrox and foam \n- plastic rims \n- self replicating paper \n- post-it notes \n- candy wrapping paper \n- not pressure-impregnated wood",
+  "notOkInfo": "- plastic bottles with deposit \n- PVC-plastic \n- plastic that is marked with number 07 and with a letter O \n- hazardous waste \n- pressure-impregnated wood \n- biowaste \n- metals \n- materials that contain aluminium \n- electronics \n- batteries or electric lightbulbs \n- glass or ceramics \n- CD/DVD \n- leather \n- diapers"
+  }
 ]

@@ -19,7 +19,8 @@
 		9D2C53E22087A54200616760 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C53E12087A54200616760 /* UIImageView.swift */; };
 		9D2C53EC2087F60700616760 /* ImageViewWithGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C53EB2087F60700616760 /* ImageViewWithGradient.swift */; };
 		9D2C53EE20889CFC00616760 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C53ED20889CFC00616760 /* UIColor.swift */; };
-		FA2580A7209D8E03006C4C32 /* mlModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FA2580A6209D8E03006C4C32 /* mlModel.mlmodel */; };
+		FA1074E0209E8F4C0026AE1B /* mlModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FA1074DF209E8F4C0026AE1B /* mlModel.mlmodel */; };
+		FA1074E2209E90420026AE1B /* CategoryDetailedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1074E1209E90420026AE1B /* CategoryDetailedInfoViewController.swift */; };
 		FA362A6F209A25C500606D8F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA362A6E209A25C500606D8F /* CameraViewController.swift */; };
 		FA362A78209A710B00606D8F /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA362A77209A710B00606D8F /* CALayer.swift */; };
 		FA362A7A209AFF4200606D8F /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA362A79209AFF4200606D8F /* CGFloat.swift */; };
@@ -64,7 +65,8 @@
 		9D2C53E12087A54200616760 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		9D2C53EB2087F60700616760 /* ImageViewWithGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWithGradient.swift; sourceTree = "<group>"; };
 		9D2C53ED20889CFC00616760 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		FA2580A6209D8E03006C4C32 /* mlModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = mlModel.mlmodel; path = ../../../Downloads/mlModel.mlmodel; sourceTree = "<group>"; };
+		FA1074DF209E8F4C0026AE1B /* mlModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = mlModel.mlmodel; path = ../../../mlModel.mlmodel; sourceTree = "<group>"; };
+		FA1074E1209E90420026AE1B /* CategoryDetailedInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailedInfoViewController.swift; sourceTree = "<group>"; };
 		FA362A6E209A25C500606D8F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		FA362A77209A710B00606D8F /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		FA362A79209AFF4200606D8F /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
@@ -124,17 +126,18 @@
 				9D2C53E02087A52C00616760 /* Extensions */,
 				9D2C53D8208785E400616760 /* Models */,
 				9D2C53A320877B8900616760 /* AppDelegate.swift */,
-				FA516B2C20961FCF00D0BB5B /* CategoryInfoViewController.swift */,
-				FA362A6E209A25C500606D8F /* CameraViewController.swift */,
+				9D2C53D620877F2800616760 /* CustomTableViewCell.swift */,
+				9D2C53EB2087F60700616760 /* ImageViewWithGradient.swift */,
 				9D2C53A520877B8900616760 /* CategoriesViewController.swift */,
-				FA2580A6209D8E03006C4C32 /* mlModel.mlmodel */,
+				FA516B2C20961FCF00D0BB5B /* CategoryInfoViewController.swift */,
+				FA1074E1209E90420026AE1B /* CategoryDetailedInfoViewController.swift */,
+				FA362A6E209A25C500606D8F /* CameraViewController.swift */,
 				9D2C53A720877B8900616760 /* Main.storyboard */,
 				9D2C53AD20877B8B00616760 /* Assets.xcassets */,
 				9D2C53B220877B8B00616760 /* Info.plist */,
 				9D2C53AA20877B8900616760 /* GreenCycle.xcdatamodeld */,
-				9D2C53D620877F2800616760 /* CustomTableViewCell.swift */,
-				9D2C53EB2087F60700616760 /* ImageViewWithGradient.swift */,
 				FAB4380A2099C19C00D69A53 /* data.json */,
+				FA1074DF209E8F4C0026AE1B /* mlModel.mlmodel */,
 			);
 			path = GreenCycle;
 			sourceTree = "<group>";
@@ -313,15 +316,16 @@
 			files = (
 				FA362A78209A710B00606D8F /* CALayer.swift in Sources */,
 				FA362A7A209AFF4200606D8F /* CGFloat.swift in Sources */,
-				FA2580A7209D8E03006C4C32 /* mlModel.mlmodel in Sources */,
 				FA362A7C209AFF4E00606D8F /* UIScreen.swift in Sources */,
 				9D2C53A620877B8900616760 /* CategoriesViewController.swift in Sources */,
 				FA516B2D20961FCF00D0BB5B /* CategoryInfoViewController.swift in Sources */,
 				9D2C53E22087A54200616760 /* UIImageView.swift in Sources */,
 				FA362A6F209A25C500606D8F /* CameraViewController.swift in Sources */,
+				FA1074E0209E8F4C0026AE1B /* mlModel.mlmodel in Sources */,
 				9D2C53DA208785F400616760 /* Category.swift in Sources */,
 				9D2C53EC2087F60700616760 /* ImageViewWithGradient.swift in Sources */,
 				9D2C53A420877B8900616760 /* AppDelegate.swift in Sources */,
+				FA1074E2209E90420026AE1B /* CategoryDetailedInfoViewController.swift in Sources */,
 				9D2C53EE20889CFC00616760 /* UIColor.swift in Sources */,
 				9D2C53D720877F2800616760 /* CustomTableViewCell.swift in Sources */,
 				9D2C53AC20877B8900616760 /* GreenCycle.xcdatamodeld in Sources */,
