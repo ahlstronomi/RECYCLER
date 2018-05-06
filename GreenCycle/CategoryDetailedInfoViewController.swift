@@ -13,7 +13,7 @@ class CategoryDetailedInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        infoLabel.sizeToFit()
         // Do any additional setup after loading the view.
     }
 

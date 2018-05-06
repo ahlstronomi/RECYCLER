@@ -45,7 +45,6 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
 
-        
         if let categories = categories {
             let category = categories[indexPath.row]
             cell.categoryName.text = category.name.uppercased()
