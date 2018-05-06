@@ -11,6 +11,8 @@ import XCTest
 
 class GreenCycleTests: XCTestCase {
     
+    let camera = CameraViewController()
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,9 +23,34 @@ class GreenCycleTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testBiowasteCategory() {
+        camera.labelWasWhenCaptured = "Banana"
+        camera.setCorrectCategory()
+        XCTAssertEqual(camera.correctCategory, "Biowaste", "Wrong category set")
+    }
+    
+    func testHazardousCategory() {
+        camera.labelWasWhenCaptured = "Computer"
+        camera.setCorrectCategory()
+        XCTAssertEqual(camera.correctCategory, "Hazardous waste", "Wrong category set")
+    }
+    
+    func testPaperCategory() {
+        camera.labelWasWhenCaptured = "Paper"
+        camera.setCorrectCategory()
+        XCTAssertEqual(camera.correctCategory, "Paper", "Wrong category set")
+    }
+    
+    func testPlasticCategory() {
+        camera.labelWasWhenCaptured = "Plastic"
+        camera.setCorrectCategory()
+        XCTAssertEqual(camera.correctCategory, "Plastic", "Wrong category set")
+    }
+    
+    func testGlassCategory() {
+        camera.labelWasWhenCaptured = "Glass bottle"
+        camera.setCorrectCategory()
+        XCTAssertEqual(camera.correctCategory, "Glass", "Wrong category set")
     }
     
     func testPerformanceExample() {
