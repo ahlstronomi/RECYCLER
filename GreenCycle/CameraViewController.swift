@@ -10,12 +10,16 @@ import UIKit
 import AVFoundation
 import Vision
 
-class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
-    
+class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+
     var labelWasWhenCaptured: String = ""
     var correctCategory: String = ""
     var pixelBufferWas: AnyObject?
     var categories: [Category]?
+    
+    var labels: [String] = [String]()
+    var pickerView = UIPickerView()
+    
     
     // MARK: Components
     
@@ -49,14 +53,20 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     var alert: UIAlertController {
         
         let alert = UIAlertController(title: labelWasWhenCaptured, message: "This belongs into the \(correctCategory)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Info", style: .default, handler: { (action: UIAlertAction!) in
-            print("Handle Ok logic here")
+        
+        // Ok action
+        alert.addAction(UIAlertAction(title: correctCategory, style: .default, handler: { (action: UIAlertAction!) in
             self.goToCategory(self.correctCategory)
             self.insertBlurView(false)
         }))
         
-        alert.addAction(UIAlertAction(title: "Incorrect", style: .cancel, handler: { (action: UIAlertAction!) in
-            print("Handle Cancel logic here")
+        // Select the type action
+        alert.addAction(UIAlertAction(title: "Select the type", style: .cancel, handler: { (action: UIAlertAction!) in
+            self.present(self.pickerAlert, animated: true)
+        }))
+        
+        // Cancel action
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action: UIAlertAction!) in
             self.insertBlurView(false)
         }))
         
@@ -65,24 +75,91 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     
     var previewLayer: CALayer!
     
+    
+    // MARK: PickerAlert things
+    
+    var pickerAlert: UIAlertController {
+        
+        labels = ["Banana", "Light bulb", "Computer", "Phone", "Paper", "Battery", "Glass Bottle", "Plastic"]
+        
+        let pickerAlert = UIAlertController(title: "What was it?", message: "\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.alert)
+        let pickerFrame = UIPickerView(frame: CGRect(x: 10, y: 20, width: 250, height: 140))
+        
+        pickerAlert.isModalInPopover = true
+        pickerAlert.view.addSubview(pickerFrame)
+        pickerFrame.delegate = self
+        pickerFrame.dataSource = self
+    
+        // Cancel Action
+        pickerAlert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.insertBlurView(false)
+        }))
+        
+        // OK Action
+        pickerAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.insertBlurView(false)
+            self.setCorrectCategory()
+            self.goToCategory(self.correctCategory)
+        }))
+        
+        return pickerAlert
+    }
+    
+    
+    // The number of columns of data
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+    // The number of rows of data
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return labels.count
+    }
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return labels[row]
+    }
+    
+    // Picker selection
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row == 0 {
+            labelWasWhenCaptured = "Banana"
+        } else if row == 1 {
+            labelWasWhenCaptured = "Light bulb"
+        } else if row == 2 {
+            labelWasWhenCaptured = "Computer"
+        } else if row == 3 {
+            labelWasWhenCaptured = "Phone"
+        } else if row == 4 {
+            labelWasWhenCaptured = "Paper"
+        } else if row == 5 {
+            labelWasWhenCaptured = "Battery"
+        } else if row == 6 {
+            labelWasWhenCaptured = "Glass Bottle"
+        } else if row == 7 {
+            labelWasWhenCaptured = "Plastic"
+        }
+    }
+    
+    
+    
     // MARK: Overrides
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
-        
         self.navigationController!.navigationBar.backgroundColor = UIColor.clear
-        
         setupCaptureSession()
-        
         view.addSubview(label)
         setupLabel()
-        
         view.addSubview(button)
         setupButton()
-        
         edgesForExtendedLayout = .all
         view.insetsLayoutMarginsFromSafeArea = false
-        
         categories = Category.getAllCategories()
     }
     
@@ -95,6 +172,12 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         
         previewLayer.frame = view.bounds
     }
+    
+    // Dispose of any resources that can be recreated
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     
     // MARK: Functionality
     
@@ -119,14 +202,11 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     }
     
     @objc func buttonAction(sender: UIButton!) {
-        print("Button tapped")
         labelWasWhenCaptured = self.label.text ?? "nil"
         print(labelWasWhenCaptured)
         setCorrectCategory()
         
-        // Display blur view
         insertBlurView(true)
-        // Present alert
         self.present(alert, animated: true)
     }
     
@@ -173,13 +253,14 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         }
     }
     
+    
     // MARK: Setup Components
+    
     
     func setupLabel() {
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         label.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
     }
-    
     
     func setupButton() {
         button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
