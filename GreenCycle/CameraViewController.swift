@@ -17,6 +17,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     var pixelBufferWas: AnyObject?
     var categories: [Category]?
     
+    var labels: [String] = [String]()
     var pickerView = UIPickerView()
     
     
@@ -78,6 +79,9 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     // MARK: PickerAlert things
     
     var pickerAlert: UIAlertController {
+        
+        labels = ["Banana", "Light bulb", "Computer", "Phone", "Paper", "Battery", "Glass Bottle", "Plastic"]
+        
         let pickerAlert = UIAlertController(title: "What was it?", message: "\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.alert)
         let pickerFrame = UIPickerView(frame: CGRect(x: 10, y: 20, width: 250, height: 140))
         
@@ -85,7 +89,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         pickerAlert.view.addSubview(pickerFrame)
         pickerFrame.delegate = self
         pickerFrame.dataSource = self
-
+    
         // Cancel Action
         pickerAlert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {
             (alert: UIAlertAction!) -> Void in
@@ -96,6 +100,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         pickerAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             self.insertBlurView(false)
+            self.setCorrectCategory()
             self.goToCategory(self.correctCategory)
         }))
         
@@ -103,28 +108,45 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     }
     
     
-
+    // The number of columns of data
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-
+    
+    // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        guard let categories = categories else { return 0 }
-        return categories.count
+        return labels.count
     }
     
+    // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        guard let categories = categories else { return nil }
-        return categories[row].name
+        return labels[row]
     }
     
+    // Picker selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        guard let categories = categories else { return }
-        self.correctCategory = categories[row].name
+        if row == 0 {
+            labelWasWhenCaptured = "Banana"
+        } else if row == 1 {
+            labelWasWhenCaptured = "Light bulb"
+        } else if row == 2 {
+            labelWasWhenCaptured = "Computer"
+        } else if row == 3 {
+            labelWasWhenCaptured = "Phone"
+        } else if row == 4 {
+            labelWasWhenCaptured = "Paper"
+        } else if row == 5 {
+            labelWasWhenCaptured = "Battery"
+        } else if row == 6 {
+            labelWasWhenCaptured = "Glass Bottle"
+        } else if row == 7 {
+            labelWasWhenCaptured = "Plastic"
+        }
     }
     
-
+    
+    
     // MARK: Overrides
     
     override func viewDidLoad() {
@@ -183,6 +205,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         labelWasWhenCaptured = self.label.text ?? "nil"
         print(labelWasWhenCaptured)
         setCorrectCategory()
+        
         insertBlurView(true)
         self.present(alert, animated: true)
     }
@@ -201,7 +224,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
             correctCategory = "Paper"
         case "Battery":
             correctCategory = "Hazardous waste"
-        case "Glass bottle":
+        case "Glass Bottle":
             correctCategory = "Glass"
         case "Plastic":
             correctCategory = "Plastic"
@@ -287,5 +310,8 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         } else {
             blurView.removeFromSuperview()
         }
+        
     }
+    
+    
 }
